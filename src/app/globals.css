@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-bg: #F8FAFC;
+  --color-text-main: #0F172A;
+  --color-brand: #6366F1;
+  --color-brand-hover: #4F46E5;
+  --color-brand-light: #EEF2FF;
+  --color-accent: #A5B4FC;
+  --color-accent-light: #C7D2FE;
+  --color-dark-bg: #1E1B4B;
+  --font-sans: var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+}
+
+:root {
+  --primary-bg: #F8FAFC;
+  --text-main: #0F172A;
+  --brand: #6366F1;
+  --accent: #A5B4FC;
+  --dark-bg: #1E1B4B;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light dark;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-main);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility classes */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-card-dark {
+  background: rgba(30, 27, 75, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(165, 180, 252, 0.15);
+}
+
+.glass-nav {
+  background: rgba(248, 250, 252, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Subtle background grid pattern for tech look */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #A5B4FC;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6366F1;
+}
+
+/* Marquee Animations */
+.animate-marquee-left {
+  animation: marquee-left 40s linear infinite;
+  min-width: max-content;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 40s linear infinite;
+  min-width: max-content;
+}
+
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
